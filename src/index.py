@@ -1,10 +1,7 @@
 from varasto import Varasto
 
 
-def main():
-    mehua = Varasto(100.0)
-    olutta = Varasto(100.0, 20.2)
-
+def do_stuff_on_varasto_1(mehua, olutta):
     print("Luonnin jälkeen:")
     print(f"Mehuvarasto: {mehua}")
     print(f"Olutvarasto: {olutta}")
@@ -22,6 +19,8 @@ def main():
     mehua.ota_varastosta(3.14)
     print(f"Mehuvarasto: {mehua}")
 
+
+def do_stuff_on_varasto_2(olutta):
     print("Virhetilanteita:")
     print("Varasto(-100.0);")
     huono = Varasto(-100.0)
@@ -36,6 +35,8 @@ def main():
     olutta.lisaa_varastoon(1000.0)
     print(f"Olutvarasto: {olutta}")
 
+
+def do_stuff_on_varasto_3(mehua, olutta):
     print(f"Mehuvarasto: {mehua}")
     print("mehua.lisaa_varastoon(-666.0)")
     mehua.lisaa_varastoon(-666.0)
@@ -52,6 +53,20 @@ def main():
     saatiin = mehua.ota_varastosta(-32.9)
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
+
+
+def main():
+    mehua = Varasto(100.0)
+    olutta = Varasto(100.0, 20.2)
+
+    # "Refactored" into 3 more functions due to the 15 statement limit.
+    # As the main function is just a series of random actions
+    #  to test the Varasto-class there is pretty much no way to
+    #  name these in a meaningful way.
+    # Reeeeeeeeeeeeeeeeeeaaaaaaaaaaaaaaaaaally long line which breaks the max characters per line rule in the pyling configuration
+    do_stuff_on_varasto_1(mehua, olutta)
+    do_stuff_on_varasto_2(olutta)
+    do_stuff_on_varasto_3(mehua, olutta)
 
 
 if __name__ == "__main__":
