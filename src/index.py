@@ -63,7 +63,6 @@ def main():
     # As the main function is just a series of random actions
     #  to test the Varasto-class there is pretty much no way to
     #  name these in a meaningful way.
-    # Reeeeeeeeeeeeeeeeeeaaaaaaaaaaaaaaaaaally long line which breaks the max characters per line rule in the pyling configuration
     do_stuff_on_varasto_1(mehua, olutta)
     do_stuff_on_varasto_2(olutta)
     do_stuff_on_varasto_3(mehua, olutta)
